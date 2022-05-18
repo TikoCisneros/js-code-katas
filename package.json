@@ -1,0 +1,16 @@
+{
+  "name": "js-code-katas",
+  "version": "1.0.0",
+  "description": "TDD code katas",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "author": "Luis Cisneros",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.4",
+    "babel-cli": "^6.26.0",
+    "jest": "^27.0.4"
+  }
+}
