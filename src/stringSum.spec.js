@@ -13,4 +13,10 @@ describe('String Sum code kata', () => {
     const resp = sum(num1, num2);
     expect(resp).toBe(0);
   });
+  test('should return the same numeric value when one of them is zero', () => {
+    const num1 = '0';
+    const num2 = '20';
+    const resp = sum(num1, num2);
+    expect(resp).toBe(20);
+  });
 });
