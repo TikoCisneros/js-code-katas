@@ -29,4 +29,8 @@ describe('String Sum code kata', () => {
     expect(sum('2', '-4')).toBe(2);
     expect(sum('39', '21')).toBe(60);
   });
+  test('accept multiple strings of natural numbers as arguments', () => {
+    expect(sum('2', '-4', '0')).toBe(2);
+    expect(sum('25', '15', '100')).toBe(140);
+  });
 });
