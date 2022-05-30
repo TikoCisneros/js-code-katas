@@ -1,9 +1,10 @@
 import { sum } from "./stringSum";
 
 describe('String Sum code kata', () => {
-  test('should works', () => {
-    const value = '1';
-    const resp = sum(value);
-    expect(resp).toEqual(value);
+  test('should return zero when num1 and num2 are empty strings', () => {
+    const num1 = ' ';
+    const num2 = '';
+    const resp = sum(num1, num2);
+    expect(resp).toBe(0);
   });
 });
