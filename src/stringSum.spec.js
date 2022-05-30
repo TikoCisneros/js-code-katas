@@ -19,4 +19,10 @@ describe('String Sum code kata', () => {
     const resp = sum(num1, num2);
     expect(resp).toBe(20);
   });
+  test('should return the same numeric value when one of them is non-natural number', () => {
+    const num1 = '-10';
+    const num2 = '12';
+    const resp = sum(num1, num2);
+    expect(resp).toBe(12);
+  });
 });
