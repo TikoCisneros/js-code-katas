@@ -4,6 +4,6 @@ which can accept only natural numbers and will return their sum.
 Replace entered number with 0 (zero) if entered number is not a natural number.
  */
 
-const sum = (input) => input;
+const sum = (num1, num2) => 0;
 
 export { sum };
