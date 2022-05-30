@@ -4,11 +4,12 @@ which can accept only natural numbers and will return their sum.
 Replace entered number with 0 (zero) if entered number is not a natural number.
  */
 
-const sum = (num1, num2) => {
-  const summandOne = getNumericValueOrZero(num1);
-  const summandTwo = getNumericValueOrZero(num2);
-  return summandOne + summandTwo;
+const sum = (...numbers) => {
+  const summands = numbers.map((number) => getNumericValueOrZero(number));
+  return sumNumbersInArray(summands);
 };
+
+const sumNumbersInArray = (summands) => summands.reduce((accumulator, current) => accumulator + current);
 
 const getNumericValueOrZero = (num) => {
   if (num.trim().length === 0) {

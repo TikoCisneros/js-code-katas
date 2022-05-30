@@ -32,5 +32,6 @@ describe('String Sum code kata', () => {
   test('accept multiple strings of natural numbers as arguments', () => {
     expect(sum('2', '-4', '0')).toBe(2);
     expect(sum('25', '15', '100')).toBe(140);
+    expect(sum('11', '5', '', '16', '8')).toBe(40);
   });
 });
