@@ -15,7 +15,12 @@ const getNumericValueOrZero = (num) => {
     return 0;
   }
 
-  return parseInt(num);
+  const value = parseInt(num);
+  if (value < 0) {
+    return 0;
+  }
+
+  return value;
 }
 
 export { sum };
