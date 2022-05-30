@@ -25,4 +25,8 @@ describe('String Sum code kata', () => {
     const resp = sum(num1, num2);
     expect(resp).toBe(12);
   });
+  test('check if addition works', () => {
+    expect(sum('2', '-4')).toBe(2);
+    expect(sum('39', '21')).toBe(60);
+  });
 });
