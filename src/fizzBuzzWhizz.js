@@ -28,11 +28,16 @@ Add the following new rule, if a number is prime return Whizz. Only worry about 
  */
 export const GAME_WORDS = Object.freeze({
   fizz: 'Fizz',
+  buzz: 'Buzz',
 })
 
 export const game = (num) => {
   if (num % 3 === 0) {
     return GAME_WORDS.fizz;
+  }
+
+  if (num % 5 === 0) {
+    return GAME_WORDS.buzz;
   }
 
   return String(num);
