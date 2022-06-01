@@ -25,4 +25,10 @@ describe('RockPaperScissors game', () => {
     const result = game(playerOneMove, playerTwoMove);
     expect(result).toBe(GAME_RESULTS.draw);
   });
+  test('should get "player one wins" if players select paper and rock', () => {
+    const playerOneMove = GAME_MOVES.paper;
+    const playerTwoMove = GAME_MOVES.rock;
+    const result = game(playerOneMove, playerTwoMove);
+    expect(result).toBe(GAME_RESULTS.playerOneWins);
+  });
 });
