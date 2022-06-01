@@ -20,7 +20,8 @@ export const GAME_RESULTS = Object.freeze({
 export const game = (playerOneMove, playerTwoMove) => {
   if (
     (playerOneMove === GAME_MOVES.rock && playerTwoMove === GAME_MOVES.scissors) ||
-    (playerOneMove === GAME_MOVES.paper && playerTwoMove === GAME_MOVES.rock)
+    (playerOneMove === GAME_MOVES.paper && playerTwoMove === GAME_MOVES.rock) ||
+    (playerOneMove === GAME_MOVES.scissors && playerTwoMove === GAME_MOVES.paper)
   ) {
     return GAME_RESULTS.playerOneWins;
   }
