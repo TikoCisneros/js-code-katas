@@ -26,9 +26,19 @@ Add the following new rule, if a number is prime return Whizz. Only worry about 
   4      4
   5      BuzzWhizz
  */
-const game = (num) => String(num);
+export const GAME_WORDS = Object.freeze({
+  fizz: 'Fizz',
+})
 
-const isPrime = num => {
+export const game = (num) => {
+  if (num % 3 === 0) {
+    return GAME_WORDS.fizz;
+  }
+
+  return String(num);
+};
+
+export const isPrime = num => {
   for(let i = 2; i < num; i++) {
     if(num % i === 0) {
       return false;
@@ -36,5 +46,3 @@ const isPrime = num => {
   } 
   return num > 1;
 }
-
-export { isPrime, game };
