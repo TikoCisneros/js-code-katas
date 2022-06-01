@@ -29,6 +29,10 @@ describe('FizzBuzz Game', () => {
       expect(result).toEqual(GAME_WORDS.whizz);
     });
   });
+  test('should return FizzWhizz if divisible by 3 and prime', () => {
+    const result = game(3);
+    expect(result).toEqual((GAME_WORDS.fizz.concat(GAME_WORDS.whizz)));
+  });
 });
 
 describe('Prime function', () => {
