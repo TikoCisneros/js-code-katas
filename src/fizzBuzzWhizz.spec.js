@@ -11,6 +11,12 @@ describe('FizzBuzz Game', () => {
       expect(result).toEqual(GAME_WORDS.fizz);
     });
   });
+  test('should return Buzz if is divisible by 5', () => {
+    [10, 20, 25, 35].map((number) => {
+      const result = game(number);
+      expect(result).toEqual(GAME_WORDS.buzz);
+    });
+  });
 });
 
 describe('Prime function', () => {
