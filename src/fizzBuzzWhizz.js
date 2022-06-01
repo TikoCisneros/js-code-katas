@@ -32,20 +32,30 @@ export const GAME_WORDS = Object.freeze({
 })
 
 export const game = (num) => {
-  if (num % 15 === 0) {
-    return GAME_WORDS.fizz.concat(GAME_WORDS.buzz);
+  let msg = '';
+  if (isDivisibleByNumber(3, num)) {
+    msg = msg.concat(GAME_WORDS.fizz);
   }
 
-  if (num % 3 === 0) {
-    return GAME_WORDS.fizz;
+  if (isDivisibleByNumber(5, num)) {
+    msg = msg.concat(GAME_WORDS.buzz);
   }
 
-  if (num % 5 === 0) {
-    return GAME_WORDS.buzz;
+  return buildResultMessage(msg, num);
+};
+
+const buildResultMessage = (message, num) => {
+  const messageTrimmed = message.trim();
+  if (messageTrimmed.length > 0) {
+    return messageTrimmed;
   }
 
   return String(num);
-};
+}
+
+const isDivisibleByNumber = (divisor, number) => {
+  return number % divisor === 0;
+} 
 
 export const isPrime = num => {
   for(let i = 2; i < num; i++) {
