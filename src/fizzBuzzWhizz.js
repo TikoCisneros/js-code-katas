@@ -29,6 +29,7 @@ Add the following new rule, if a number is prime return Whizz. Only worry about 
 export const GAME_WORDS = Object.freeze({
   fizz: 'Fizz',
   buzz: 'Buzz',
+  whizz: 'Whizz'
 })
 
 export const game = (num) => {
@@ -39,6 +40,10 @@ export const game = (num) => {
 
   if (isDivisibleByNumber(5, num)) {
     msg = msg.concat(GAME_WORDS.buzz);
+  }
+
+  if (isPrime(num)) {
+    msg = msg.concat(GAME_WORDS.whizz);
   }
 
   return buildResultMessage(msg, num);
