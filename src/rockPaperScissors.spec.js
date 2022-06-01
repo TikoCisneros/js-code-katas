@@ -37,4 +37,10 @@ describe('RockPaperScissors game', () => {
     const result = game(playerOneMove, playerTwoMove);
     expect(result).toBe(GAME_RESULTS.playerTwoWins);
   });
+  test('should get a draw if both players choose scissors', () => {
+    const playerOneMove = GAME_MOVES.scissors;
+    const playerTwoMove = GAME_MOVES.scissors;
+    const result = game(playerOneMove, playerTwoMove);
+    expect(result).toBe(GAME_RESULTS.draw);
+  });
 });
