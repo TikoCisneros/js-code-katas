@@ -1,9 +1,9 @@
 import { game, isPrime } from "./fizzBuzzWhizz";
 
 describe('FizzBuzz Game', () => {
-  test('should works', () => {
+  test('should return number as a string', () => {
     const result = game(1);
-    expect(result).toEqual(1);
+    expect(result).toEqual('1');
   });
 });
 
