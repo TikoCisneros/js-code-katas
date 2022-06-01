@@ -17,6 +17,12 @@ describe('FizzBuzz Game', () => {
       expect(result).toEqual(GAME_WORDS.buzz);
     });
   });
+  test('should return FizzBuzz if is divisible by 3 and 5', () => {
+    [15, 30, 75].map((number) => {
+      const result = game(number);
+      expect(result).toEqual(GAME_WORDS.fizz.concat(GAME_WORDS.buzz));
+    });
+  });
 });
 
 describe('Prime function', () => {
