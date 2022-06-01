@@ -23,6 +23,12 @@ describe('FizzBuzz Game', () => {
       expect(result).toEqual(GAME_WORDS.fizz.concat(GAME_WORDS.buzz));
     });
   });
+  test('should return Whizz if the number is prime', () => {
+    [2, 7].map((number) => {
+      const result = game(number);
+      expect(result).toEqual(GAME_WORDS.whizz);
+    });
+  });
 });
 
 describe('Prime function', () => {
