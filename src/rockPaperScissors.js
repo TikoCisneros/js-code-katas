@@ -6,9 +6,9 @@ Rules:
 - Same Moves Result in Draw
 */
 export const GAME_MOVES = Object.freeze({
-  rock: 'rock',
-  scissors: 'scissors',
-  paper: 'paper',
+  rock: "rock",
+  scissors: "scissors",
+  paper: "paper",
 });
 
 export const GAME_RESULTS = Object.freeze({
@@ -25,7 +25,10 @@ export const game = (playerOneMove, playerTwoMove) => {
     return GAME_RESULTS.playerOneWins;
   }
 
-  if (playerOneMove === GAME_MOVES.rock && playerTwoMove === GAME_MOVES.paper) {
+  if (
+    (playerOneMove === GAME_MOVES.rock && playerTwoMove === GAME_MOVES.paper) ||
+    (playerOneMove === GAME_MOVES.paper && playerTwoMove === GAME_MOVES.scissors)
+  ) {
     return GAME_RESULTS.playerTwoWins;
   }
 
