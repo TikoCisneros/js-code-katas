@@ -8,16 +8,22 @@ Rules:
 export const GAME_MOVES = Object.freeze({
   rock: 'rock',
   scissors: 'scissors',
+  paper: 'paper',
 });
 
 export const GAME_RESULTS = Object.freeze({
   draw: 0,
   playerOneWins: 1,
+  playerTwoWins: 2,
 });
 
 export const game = (playerOneMove, playerTwoMove) => {
   if (playerOneMove === GAME_MOVES.rock && playerTwoMove === GAME_MOVES.scissors) {
     return GAME_RESULTS.playerOneWins;
+  }
+
+  if (playerOneMove === GAME_MOVES.rock && playerTwoMove === GAME_MOVES.paper) {
+    return GAME_RESULTS.playerTwoWins;
   }
 
   return GAME_RESULTS.draw;
