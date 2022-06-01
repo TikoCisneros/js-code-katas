@@ -6,6 +6,12 @@ Rules:
 - Same Moves Result in Draw
 */
 
-const game = (input) => input;
+export const GAME_MOVES = Object.freeze({
+  rock: 'rock',
+});
 
-export { game };
+export const GAME_RESULTS = Object.freeze({
+  draw: 0,
+});
+
+export const game = (playerOneMove, playerTwoMove) => GAME_RESULTS.draw;
