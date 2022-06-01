@@ -26,7 +26,7 @@ Add the following new rule, if a number is prime return Whizz. Only worry about 
   4      4
   5      BuzzWhizz
  */
-const game = (input) => input;
+const game = (num) => String(num);
 
 const isPrime = num => {
   for(let i = 2; i < num; i++) {
