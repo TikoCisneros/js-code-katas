@@ -32,6 +32,10 @@ export const GAME_WORDS = Object.freeze({
 })
 
 export const game = (num) => {
+  if (num % 15 === 0) {
+    return GAME_WORDS.fizz.concat(GAME_WORDS.buzz);
+  }
+
   if (num % 3 === 0) {
     return GAME_WORDS.fizz;
   }
