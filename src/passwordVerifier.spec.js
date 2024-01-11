@@ -12,4 +12,9 @@ describe('Password verifier', () => {
     const password = '1234567';
     expect(() => passVerifier.verify(password)).toThrow(Error("password should be larger than 8 chars"));
   });
+
+  it('should throw error if password does not have at least one uppercase letter', () => {
+    const password = 'abcdefghi';
+    expect(() => passVerifier.verify(password)).toThrow(Error("password should have one uppercase letter at least"));
+  });
 });
