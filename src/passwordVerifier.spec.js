@@ -1,3 +1,5 @@
+import { PasswordVerifier } from "./passwordVerifier";
+
 describe('Password verifier', () => {
   it('should verify if password is null', () => {
     const password = null;
