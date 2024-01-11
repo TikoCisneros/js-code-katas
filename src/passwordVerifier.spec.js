@@ -17,4 +17,9 @@ describe('Password verifier', () => {
     const password = 'abcdefghi';
     expect(() => passVerifier.verify(password)).toThrow(Error("password should have one uppercase letter at least"));
   });
+
+  it('should throw error if password does not have at least one lowercase letter', () => {
+    const password = 'ABCDEFGHI';
+    expect(() => passVerifier.verify(password)).toThrow(Error("password should have one lowercase letter at least"));
+  });
 });
