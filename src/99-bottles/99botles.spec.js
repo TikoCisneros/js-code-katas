@@ -30,4 +30,14 @@ describe("99 bottles", () => {
 
     expect(verse).toBe(expected)
   });
+
+  it("should return the correct verse with no more bottles", () => {
+    const expected =
+      "No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.";
+    const beerSong = new BeerSong();
+    
+    const verse = beerSong.verse(0)
+
+    expect(verse).toBe(expected)
+  });
 });
