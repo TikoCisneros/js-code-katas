@@ -19,26 +19,41 @@ Create a Password verifications class called “PasswordVerifier”.
 
 export class PasswordVerifier {
   verify(password) {
-    if (!password) {
-      throw Error("password should not be null")
-    }
-
-    if (password.length <= 8) {
-      throw Error("password should be larger than 8 chars")
-    }
-    
-    if (!/[A-Z]/.test(password)) {
-      throw Error("password should have one uppercase letter at least")
-    }
-
-    if (!/[a-z]/.test(password)) {
-      throw Error("password should have one lowercase letter at least")
-    }
-    
-    if (!/\d/.test(password)) {
-      throw Error("password should have one number at least")
-    }
-
+    this.#validateNotNull(password);
+    this.#validateLength(password);
+    this.#validateUppercase(password);
+    this.#validateLowercase(password);
+    this.#validateNumber(password);
     return true;
+  }
+
+  #validateNotNull(password) {
+    if (!password) {
+      throw new Error("password should not be null");
+    }
+  }
+
+  #validateLength(password) {
+    if (password.length <= 8) {
+      throw new Error("password should be larger than 8 characters");
+    }
+  }
+
+  #validateUppercase(password) {
+    if (!/[A-Z]/.test(password)) {
+      throw new Error("password should have at least one uppercase letter");
+    }
+  }
+
+  #validateLowercase(password) {
+    if (!/[a-z]/.test(password)) {
+      throw new Error("password should have at least one lowercase letter");
+    }
+  }
+
+  #validateNumber(password) {
+    if (!/\d/.test(password)) {
+      throw new Error("password should have at least one number");
+    }
   }
 }
