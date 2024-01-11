@@ -19,6 +19,10 @@ Create a Password verifications class called “PasswordVerifier”.
 
 export class PasswordVerifier {
   verify(password) {
-    throw Error("password should not be null")
+    if (!password) {
+      throw Error("password should not be null")
+    }
+
+    throw Error("password should be larger than 8 chars")
   }
 }
