@@ -21,9 +21,9 @@ export class PasswordVerifier {
   verify(password) {
     this.#validateNotNull(password);
     this.#validateLength(password);
-    this.#validateUppercase(password);
-    this.#validateLowercase(password);
-    this.#validateNumber(password);
+    this.#validatePattern(password, /[A-Z]/, "uppercase letter");
+    this.#validatePattern(password, /[a-z]/, "lowercase letter");
+    this.#validatePattern(password, /\d/, "number");
     return true;
   }
 
@@ -39,21 +39,9 @@ export class PasswordVerifier {
     }
   }
 
-  #validateUppercase(password) {
-    if (!/[A-Z]/.test(password)) {
-      throw new Error("password should have at least one uppercase letter");
-    }
-  }
-
-  #validateLowercase(password) {
-    if (!/[a-z]/.test(password)) {
-      throw new Error("password should have at least one lowercase letter");
-    }
-  }
-
-  #validateNumber(password) {
-    if (!/\d/.test(password)) {
-      throw new Error("password should have at least one number");
+  #validatePattern(password, pattern, patternName) {
+    if (!pattern.test(password)) {
+      throw new Error(`password should have at least one ${patternName}`);
     }
   }
 }
