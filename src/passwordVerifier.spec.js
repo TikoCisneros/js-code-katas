@@ -27,4 +27,9 @@ describe('Password verifier', () => {
     const password = 'AbCdefghI';
     expect(() => passVerifier.verify(password)).toThrow(Error("password should have one number at least"));
   });
+
+  it('should be valid if passes all validations', () => {
+    const password = 'AbCdefgh1';
+    expect(() => passVerifier.verify(password)).not.toThrowError();
+  });
 });
