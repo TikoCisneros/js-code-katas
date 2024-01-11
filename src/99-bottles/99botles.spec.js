@@ -1,3 +1,5 @@
+import { BeerSong } from "./99botles";
+
 describe("99 bottles", () => {
   it("should print an arbitrary verse", () => {
     const expected =
