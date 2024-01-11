@@ -22,4 +22,9 @@ describe('Password verifier', () => {
     const password = 'ABCDEFGHI';
     expect(() => passVerifier.verify(password)).toThrow(Error("password should have one lowercase letter at least"));
   });
+
+  it('should throw error if password does not have at least one number', () => {
+    const password = 'AbCdefghI';
+    expect(() => passVerifier.verify(password)).toThrow(Error("password should have one number at least"));
+  });
 });
