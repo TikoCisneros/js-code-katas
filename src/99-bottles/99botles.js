@@ -1,4 +1,14 @@
 export class BeerSong {
+  sing(from, to = 0) {
+    const song = [];
+    
+    for (let i = from; i >= to; i--) {
+      song.push(this.verse(i));
+    }
+    
+    return song.join('\n');
+  }
+
   verse(number) {
     if (number === 0) {
       return "No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.";
