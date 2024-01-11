@@ -1,12 +1,6 @@
 export class BeerSong {
   sing(from, to = 0) {
-    const song = [];
-    
-    for (let i = from; i >= to; i--) {
-      song.push(this.verse(i));
-    }
-    
-    return song.join('\n');
+    return this.#generateRange(from, to).map(this.verse).join("\n");
   }
 
   verse(number) {
@@ -19,5 +13,16 @@ export class BeerSong {
     }
 
     return `${number} bottles of beer on the wall, ${number} bottles of beer.\nTake one down and pass it around, ${number - 1} ${number === 2 ? 'bottle' : 'bottles'} of beer on the wall.\n`;
+  }
+
+  /**
+   * Aprovecha el método Array.from() para generar el array de rango descendente. 
+   * Crea un array con una longitud igual a la diferencia absoluta entre end y start, más uno. 
+   * El segundo argumento de Array.from() es una función de mapeo que toma el índice i. 
+   * Utiliza un operador condicional (operador ternario) para verificar si start es mayor que end. Si es así, 
+   * resta i de start para calcular el valor correspondiente para cada elemento en el rango. De lo contrario, suma i a start.
+   */
+  #generateRange(start, end) {
+    return Array.from({ length: Math.abs(end - start) + 1 }, (_, i) => start > end ? start - i : start + i);
   }
 }
