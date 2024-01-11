@@ -20,4 +20,14 @@ describe("99 bottles", () => {
 
     expect(verse).toBe(expected)
   });
+
+  it("should return the correct verse with one bottle", () => {
+    const expected =
+      "1 bottle of beer on the wall, 1 bottle of beer.\nTake it down and pass it around, no more bottles of beer on the wall.\n";
+    const beerSong = new BeerSong();
+    
+    const verse = beerSong.verse(1)
+
+    expect(verse).toBe(expected)
+  });
 });
