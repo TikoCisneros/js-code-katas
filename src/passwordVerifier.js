@@ -27,14 +27,18 @@ export class PasswordVerifier {
       throw Error("password should be larger than 8 chars")
     }
     
-    if (password.toLowerCase() === password) {
+    if (!/[A-Z]/.test(password)) {
       throw Error("password should have one uppercase letter at least")
     }
 
-    if (password.toUpperCase() === password) {
+    if (!/[a-z]/.test(password)) {
       throw Error("password should have one lowercase letter at least")
     }
     
-    throw Error("password should have one number at least")
+    if (!/\d/.test(password)) {
+      throw Error("password should have one number at least")
+    }
+
+    return true;
   }
 }
