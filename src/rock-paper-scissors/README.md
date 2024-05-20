@@ -1,4 +1,3 @@
-/**
 Rules:
 - Rock Beats Scissors
 - Scissors Beats Paper
@@ -9,8 +8,3 @@ Return:
 - PLayer one wins
 - PLayer two wins
 - Is a draw
-*/
-
-const game = (input) => input;
-
-export { game };

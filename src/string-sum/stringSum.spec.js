@@ -1,4 +1,4 @@
-describe('99 bottles', () => {
+describe('String Sum', () => {
   it('should test', () => {
     expect(true).toBeTruthy();
   });

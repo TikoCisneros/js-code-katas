@@ -1,4 +1,4 @@
-describe('99 bottles', () => {
+describe('Fizz Buzz', () => {
   it('should test', () => {
     expect(true).toBeTruthy();
   });
