@@ -4,11 +4,13 @@ export async function getCharactersByNameOrGender({ gender, name }) {
   const characters = await getCharacters();
 
   const filteredCharacters = characters.filter((character) => {
-    if (gender) {
-      return character.gender.toLowerCase() === gender.toLowerCase();
-    }
-
-    return character.name.toLowerCase().includes(name.toLowerCase());
+    const matchesGender = gender
+      ? character.gender.toLowerCase() === gender.toLowerCase()
+      : true;
+    const matchesName = name
+      ? character.name.toLowerCase().includes(name.toLowerCase())
+      : true;
+    return matchesGender && matchesName;
   });
 
   return filteredCharacters;
