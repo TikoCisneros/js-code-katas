@@ -36,4 +36,16 @@ describe("Api tests", () => {
       expect(result).toEqual(output);
     });
   });
+
+  it("should return Network error", () => {
+    fetch.mockImplementationOnce(() =>
+      Promise.resolve({
+        json: () => Promise.resolve({}),
+      })
+    );
+
+    getCharacters().catch((error) =>
+      expect(error.message).toBe("Network response was not ok")
+    );
+  });
 });
