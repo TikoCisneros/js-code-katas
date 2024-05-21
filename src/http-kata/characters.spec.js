@@ -13,6 +13,11 @@ const API_RESULT_MOCK = [
     name: "Summer Smith",
     gender: "Female",
   },
+  {
+    id: 3,
+    name: "Julia Smith",
+    gender: "Female",
+  },
 ];
 
 describe("Characters functionality", () => {
@@ -26,6 +31,15 @@ describe("Characters functionality", () => {
     const output = [API_RESULT_MOCK[0]];
     jest.spyOn(api, "getCharacters").mockReturnValue(API_RESULT_MOCK);
     const result = await getCharactersByNameOrGender({ name: "rick" });
+    expect(result).toEqual(output);
+  });
+  it("should filter characters by gender and  name successfully", async () => {
+    const output = [API_RESULT_MOCK[1]];
+    jest.spyOn(api, "getCharacters").mockReturnValue(API_RESULT_MOCK);
+    const result = await getCharactersByNameOrGender({
+      gender: "female",
+      name: "summer",
+    });
     expect(result).toEqual(output);
   });
 });
