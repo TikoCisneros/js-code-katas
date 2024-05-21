@@ -22,4 +22,10 @@ describe("Characters functionality", () => {
     const result = await getCharactersByNameOrGender({ gender: "male" });
     expect(result).toEqual(output);
   });
+  it("should filter characters by name successfully", async () => {
+    const output = [API_RESULT_MOCK[0]];
+    jest.spyOn(api, "getCharacters").mockReturnValue(API_RESULT_MOCK);
+    const result = await getCharactersByNameOrGender({ name: "rick" });
+    expect(result).toEqual(output);
+  });
 });
